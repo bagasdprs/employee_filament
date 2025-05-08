@@ -16,11 +16,11 @@ class Cities extends Model
 
     public function state()
     {
-        return $this->belongsTo(States::class);
+        return $this->belongsTo(States::class, 'state_id');
     }
 
     public function employees()
     {
-        return $this->hasMany(Employees::class);
+        return $this->hasMany(Employees::class, 'city_id');
     }
 }

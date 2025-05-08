@@ -16,11 +16,11 @@ class Countries extends Model
 
     public function employees()
     {
-        return $this->hasMany(Employees::class);
+        return $this->hasMany(Employees::class, 'country_id');
     }
 
     public function states()
     {
-        return $this->hasMany(States::class);
+        return $this->hasMany(States::class, 'country_id');
     }
 }

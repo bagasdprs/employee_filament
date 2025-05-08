@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\CountriesResource\RelationManagers\EmployeesRelationManager;
 use App\Filament\Resources\StatesResource\Pages;
 use App\Filament\Resources\StatesResource\RelationManagers;
+use App\Filament\Resources\StatesResource\RelationManagers\CitiesRelationManager;
 use App\Models\States;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -22,6 +24,8 @@ class StatesResource extends Resource
     protected static ?string $model = States::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-map';
+    protected static ?string $navigationGroup = 'System Management';
+
 
     public static function form(Form $form): Form
     {
@@ -30,8 +34,11 @@ class StatesResource extends Resource
                 Card::make()
                     ->schema([
                         Select::make('country_id')
-                            ->relationship('country', 'name'),
+                            ->relationship('country', 'name')
+                            ->required(),
                         TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
                     ])
             ]);
     }
@@ -70,7 +77,8 @@ class StatesResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            EmployeesRelationManager::class,
+            CitiesRelationManager::class,
         ];
     }
 

@@ -24,7 +24,7 @@ class Employees extends Model
 
     public function country()
     {
-        return $this->belongsTo(Countries::class);
+        return $this->belongsTo(Countries::class, 'country_id');
     }
 
     public function city()

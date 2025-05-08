@@ -1,0 +1,5 @@
+@import "../../../../vendor/filament/filament/resources/css/theme.css";
+.fi-sidebar {
+    border-right: 2px solid #e5e7eb; /* Tailwind's gray-200 */
+}
+@config 'tailwind.config.js';
