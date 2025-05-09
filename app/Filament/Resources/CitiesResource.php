@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CitiesResource\Pages;
 use App\Filament\Resources\CitiesResource\RelationManagers;
 use App\Filament\Resources\CitiesResource\RelationManagers\EmployeesRelationManager;
+// Ensure the CitiesRelationManager class exists in the specified namespace
+use App\Filament\Resources\CitiesResource\RelationManagers\CitiesRelationManager;
 use App\Models\Cities;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -60,6 +62,7 @@ class CitiesResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('name', 'asc')
             ->filters([
                 //
             ])

@@ -14,4 +14,9 @@ class CreateCountries extends CreateRecord
     {
         return static::getResource()::getUrl('index');
     }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Country has been created';
+    }
 }

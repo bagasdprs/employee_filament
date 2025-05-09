@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeesResource\Pages;
 use App\Filament\Resources\EmployeesResource\RelationManagers;
+use App\Filament\Resources\EmployeesResource\Widgets\EmployeesStatsOverview;
 use App\Models\Employees;
 use App\Models\Countries;
 use App\Models\States;
@@ -132,6 +133,13 @@ class EmployeesResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            EmployeesStatsOverview::class,
         ];
     }
 

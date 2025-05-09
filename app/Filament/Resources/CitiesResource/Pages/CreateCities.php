@@ -14,4 +14,9 @@ class CreateCities extends CreateRecord
     {
         return static::getResource()::getUrl('index');
     }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Cities has been created';
+    }
 }
