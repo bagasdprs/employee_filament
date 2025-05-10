@@ -21,7 +21,10 @@ class EmployeesStatsOverview extends BaseWidget
                 ->description('Total number of employees')
                 ->icon('heroicon-o-user-group')
                 ->color('primary'),
-            // Stat::make($idn->name . 'Employees', $idn->employees_count)
+            Stat::make('Indonesia Employees', $idn ? $idn->employees_count : 0)
+                ->description('Total number of employees in Indonesia')
+                ->icon('heroicon-o-user-group')
+                ->color('success'),
         ];
     }
 }
